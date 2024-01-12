@@ -19,8 +19,6 @@ $(function () {
     var timeBlockEL = $(this).parent();
     var hourID = timeBlockEL.attr('id');
     var desc = timeBlockEL.children(".description").val().trim();
-    //console.log(hourID);
-    //console.log(desc);
     setLocalStorage(hourID, desc);
   });
 
@@ -42,44 +40,39 @@ $(function () {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-function renderTimeColors()
-{
-  var currentHour = parseInt(dayjs().format('H'));
-  //uncoment to test at night
- //var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
+  function renderTimeColors() {
+    var currentHour = parseInt(dayjs().format('H'));
+    //uncoment to test at night
+    //var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
 
-  var timeBlocks = $(".time-block");
-  timeBlocks.removeClass('past present future');
-  for(var i in timeBlocks)
-  {
-    var blockID= timeBlocks[i].id;
-    var blockNum = parseInt(blockID.split('-')[1]);
-    if(blockNum < currentHour)
-    {
-      $('#'+blockID).addClass('past');
-    }else if
-    (blockNum == currentHour)
-    {
-      $('#'+blockID).addClass('present');
+    var timeBlocks = $(".time-block");
+    timeBlocks.removeClass('past present future');
+    for (var i in timeBlocks) {
+      var blockID = timeBlocks[i].id;
+      if (blockID !== undefined) {
+        var blockNum = parseInt(blockID.split('-')[1]);
+        if (blockNum < currentHour) {
+          $('#' + blockID).addClass('past');
+        } else if
+          (blockNum == currentHour) {
+          $('#' + blockID).addClass('present');
+        }
+        else if (blockNum > currentHour) {
+          $('#' + blockID).addClass('future');
+        }
+      }
     }
-    else if(blockNum > currentHour)
-    {
-     $('#'+blockID).addClass('future');
-    }
+
   }
-
-}
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  function renderPreviousData()
-  {
+  function renderPreviousData() {
     var StoredData = JSON.parse(localStorage.getItem(storagekey));
-    for(var i in StoredData)
-    {
-      console.log('$(#'+i+').val('+StoredData[i]+')');
-      $("#"+i).children(".description").val(StoredData[i]);
+    for (var i in StoredData) {
+      console.log('$(#' + i + ').val(' + StoredData[i] + ')');
+      $("#" + i).children(".description").val(StoredData[i]);
     }
 
   }
