@@ -36,7 +36,7 @@ $(function () {
   function renderTimeColors() {
     var currentHour = parseInt(dayjs().format('H')); //get current hour in 24hr format;
     //uncoment to test at night
-    var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
+    //var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
 
     var timeBlocks = $(".time-block"); //get all time block elements 
        timeBlocks.removeClass('past present future'); // ensure the time blocks are clear of theses clases
