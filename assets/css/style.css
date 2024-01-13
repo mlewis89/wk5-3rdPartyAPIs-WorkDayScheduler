@@ -1,8 +1,10 @@
+/*----------------------------html elements----------------------------*/
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
+/*text input for shedule inputs*/
 textarea {
   background: transparent;
   border: none;
@@ -12,39 +14,40 @@ textarea {
   padding: 10px;
 }
 
+/*----------------------------Classes----------------------------*/
 .description {
   white-space: pre-wrap;
 }
-
+/*time block element*/
 .time-block {
   border-radius: 15px;
 }
-
+/*row element for bootstrap*/
 .row {
   border-top: 1px solid white;
 }
-
+/**/
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
-
+/*past appearance*/
 .past {
   background-color: #d3d3d3;
   color: white;
 }
-
+/*present appearance*/
 .present {
   background-color: #ff6961;
   color: white;
 }
-
+/*future appearance*/
 .future {
   background-color: #77dd77;
   color: white;
 }
-
+/*Save button appearance*/
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
@@ -52,12 +55,13 @@ textarea {
   background-color: #06aed5;
   color: white;
 }
-
+/*save button hover event*/
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-
+/*-----------------------------ID----------------------------*/
+/*Save Notification*/
 #saveNoti{
   display: none;
 }
