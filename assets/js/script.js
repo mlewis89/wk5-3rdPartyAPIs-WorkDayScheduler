@@ -20,6 +20,8 @@ $(function () {
     var hourID = timeBlockEL.attr('id');
     var desc = timeBlockEL.children(".description").val().trim();
     setLocalStorage(hourID, desc);
+    $("#saveNoti").show();
+    $("#saveNoti").hide(3000);
   });
 
   function setLocalStorage(key, value) {
@@ -32,6 +34,13 @@ $(function () {
     }
     data[key] = value;
     localStorage.setItem(storagekey, JSON.stringify(data));
+  }
+
+  function displaySaveNotification()
+  {
+    var newElement = document.createElement('div')
+    newElement
+    $('header').append()
   }
 
   //
@@ -83,4 +92,5 @@ $(function () {
   renderPreviousData();
   renderTimeColors()
 });
+
 
