@@ -1,66 +1,56 @@
-
-
-# Bootcamp Challenge Week Four - Web APIs Quiz using javascript
+# Bootcamp Challenge Week Five - Thirdparty APIs Work Day scheduler
 
 ## Description
 
-Purpose: to test my knowledge of javascript and Web APIs.
+Purpose: to test my knowledge of thirdparty APIs.
 
-In this project i was given no starter code and therefore i completed this task from scratch. The task was to create html, css and javascript code that enables a user to complete a quiz on the java script language, by dynamically chaging the displayed content on a single html page and then storing scores to local storage for use on a second htlm page of high scores.
+In this project i was given starter code including the html and css but no javascript. The task was to create javascript that dynamically changes its appearance based on the time of day while also saving items to local storage
 
-The main focus of the assignment was on the javascript and therefore the page styling was not a priority 
-
-During this project I learnt how to pull data from a html form and how include audio elements, and activate them from javascript.
+During this project I learnt the power of jQueary and traversing the DOM.
 
 ## User Story
 
 ```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
+AS AN employee with a busy schedule
+I WANT to add important events to a daily planner
+SO THAT I can manage my time effectively
 ```
 
 ## Acceptance Criteria
 
 ```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and my score
+GIVEN I am using a daily planner to create a schedule
+WHEN I open the planner
+THEN the current day is displayed at the top of the calendar
+WHEN I scroll down
+THEN I am presented with time blocks for standard business hours of 9am to 5pm
+WHEN I view the time blocks for that day
+THEN each time block is color-coded to indicate whether it is in the past, present, or future
+WHEN I click into a time block
+THEN I can enter an event
+WHEN I click the save button for that time block
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist
 ```
 
 ## Usage
 
 The completed project can be viewed via GitHub pages as below.
-https://mlewis89.github.io/wk4-Web-Api-Quiz/
+https://mlewis89.github.io/wk5-3rdPartyAPIs-WorkDayScheduler
 
 GitHub repository
-https://github.com/mlewis89/wk4-Web-Api-Quiz/
+https://github.com/mlewis89/wk5-3rdPartyAPIs-WorkDayScheduler
 
 ## Screen Shots of Completed Challenge
 
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135427.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135507.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135533.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135549.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135731.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135745.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135803.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135618.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135638.png)
-![completed application](./Assets/screenshots/Screenshot%202024-01-11%20135657.png)
 
+
+![completed application](./Assets/screenshot/Capture.PNG)
 
 ## Installation
 
-The project files are within the /root folder of this repo, please explore index.html, highscores.html, ./asests/style.css. , ./assets/js/script.js and ./assets/js/highscores.js
+The project files are within the /root folder of this repo, please explore index.html, highscores.html, ./asests/style.css. , ./assets/js/script.js 
 
 
 ## Credits

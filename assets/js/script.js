@@ -14,7 +14,7 @@ $(function () {
     var desc = timeBlockEL.children(".description").val().trim();    //get text input, and trim blank space
     setLocalStorage(hourID, desc);     //save text to local storage
     $("#saveNoti").show();    //display save notification
-    $("#saveNoti").hide(3000);    //hide savenotification over 3 seconds
+    $("#saveNoti").hide(5000);    //hide savenotification over 5 seconds
   });
 
   //function to save data to local storage - takes a key value pair and inserts it into an object in local storage
@@ -36,7 +36,7 @@ $(function () {
   function renderTimeColors() {
     var currentHour = parseInt(dayjs().format('H')); //get current hour in 24hr format;
     //uncoment to test at night
-    //var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
+    var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
 
     var timeBlocks = $(".time-block"); //get all time block elements 
        timeBlocks.removeClass('past present future'); // ensure the time blocks are clear of theses clases
