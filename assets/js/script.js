@@ -1,20 +1,22 @@
-//HTML ELEMENTS
-var SaveBtnEL = $(".saveBtn");
-var CurrentDayEL = $("#currentDay");
-
-//CurrentTime = dayjs('');
+//local Storage key
 var storagekey = "wk5-WorkDayPlanner"
 
 // Ensure all DOM elents have loaded before running the contained code
 $(function () {
+  //HTML ELEMENTS
+  var SaveBtnEL = $(".saveBtn");
+  var CurrentDayEL = $("#currentDay");
+  var SaveNotifEL = $("#saveNoti");
+  var timeBlockELs = $(".time-block"); //get all time block elements 
+
   //listener event for save button click event, then uses dom traversal to quire the id of the container 
   SaveBtnEL.on('click', function () {
     var timeBlockEL = $(this).parent();  //get event item, and then get parent container
     var hourID = timeBlockEL.attr('id'); //save hour ide from container ID
     var desc = timeBlockEL.children(".description").val().trim();    //get text input, and trim blank space
     setLocalStorage(hourID, desc);     //save text to local storage
-    $("#saveNoti").show();    //display save notification
-    $("#saveNoti").hide(5000);    //hide savenotification over 5 seconds
+    SaveNotifEL.show();    //display save notification
+    SaveNotifEL.hide(5000);    //hide savenotification over 5 seconds
   });
 
   //function to save data to local storage - takes a key value pair and inserts it into an object in local storage
@@ -38,10 +40,9 @@ $(function () {
     //uncoment to test at night
     //var currentHour = parseInt(dayjs('12-01-2024 12:00 PM').format('H'));
 
-    var timeBlocks = $(".time-block"); //get all time block elements 
-       timeBlocks.removeClass('past present future'); // ensure the time blocks are clear of theses clases
-    for (var i in timeBlocks) { //for each timeblock
-      var blockID = timeBlocks[i].id; //save timeblock class id 
+    timeBlockELs.removeClass('past present future'); // ensure the time blocks are clear of theses clases
+    for (var i in timeBlockELs) { //for each timeblock
+      var blockID = timeBlockELs[i].id; //save timeblock class id 
       if (blockID !== undefined) { //prevent code running on addtional information within the object
         var blockNum = parseInt(blockID.split('-')[1]); //pick out the numeric hour identenfier
         if (blockNum < currentHour) { //if time has past
