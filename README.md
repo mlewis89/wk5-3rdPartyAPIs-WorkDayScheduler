@@ -46,7 +46,7 @@ https://github.com/mlewis89/wk5-3rdPartyAPIs-WorkDayScheduler
 
 
 
-![completed application](./Assets/screenshot/Capture.PNG)
+![completed application](./assets/screenshot/Capture.PNG)
 
 ## Installation
 
